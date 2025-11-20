@@ -8,7 +8,7 @@ import {
   productQuantitySubtraction,
 } from "../../Global state/cart/cartSlice";
 import { AppDispatch, RootState } from "../../Global state/store";
-import CartNavBar from "./CartNavBar";
+import BarNavigation from "../BarNavigation/BarNavigation";
 import OrderSummary from "./OrderSummary";
 
 
@@ -33,8 +33,8 @@ function FullCart() {
 
   return (
     <div className="flex h-full min-h-dvh w-full flex-col items-center">
-      <CartNavBar color="black" />
-      <div className="mt-10 h-full w-full max-w-[1400px] pl-3 lg:pl-20">
+      <BarNavigation color="black" bgWhite={true} visibleHeartIcon={false} />
+      <div className="mt-10 pt-14 h-full w-full max-w-[1400px] pl-3 lg:pl-20">
         <div className="mb-10 text-left text-2xl font-medium">
           YOUR CART ({cartQuantity})
         </div>
