@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../Global state/store";
 import FullCart from "../../components/Cart Full and Empty/FullCart";
 import EmptyCart from "../../components/Cart Full and Empty/EmptyCart";
+import Footer from "../../components/Footer/Footer";
 
 function Cart() {
   const cartList = useSelector((state: RootState) => state.cart.myCart);
@@ -11,7 +12,12 @@ function Cart() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
-  return <>{cartList?.length > 0 ? <FullCart /> : <EmptyCart />}</>;
+  return (
+    <>
+      {cartList?.length > 0 ? <FullCart /> : <EmptyCart />}
+      <Footer />
+    </>
+  );
 }
 
 export default Cart;
