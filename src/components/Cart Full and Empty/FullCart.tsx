@@ -33,7 +33,7 @@ function FullCart() {
 
   return (
     <div className="flex h-full min-h-dvh w-full flex-col items-center">
-      <BarNavigation color="black" bgWhite={true} visibleHeartIcon={true} />
+      <BarNavigation color="black" bgWhite={true} visibleHeartIcon={true} visibleCartIcon={false} />
       <div className="mt-10 pt-14 h-full w-full max-w-[1400px] pl-3 lg:pl-20">
         <div className="mb-10 text-left text-2xl font-medium">
           YOUR CART ({cartQuantity})

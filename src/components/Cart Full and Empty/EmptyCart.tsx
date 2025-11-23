@@ -6,7 +6,7 @@ function EmptyCart() {
     <div
       className={`relative flex h-full min-h-dvh w-full flex-col items-center ${styles.bgImage}`}
     >
-      <BarNavigation color="black" bgWhite={false} visibleHeartIcon={true} />
+      <BarNavigation color="black" bgWhite={false} visibleHeartIcon={true} visibleCartIcon={false} />
       <div className="absolute bottom-0 left-0 right-0 top-0 bg-slate-600 opacity-35"></div>
       <div className="absolute bottom-0 left-0 right-0 top-0 bg-white bg-opacity-10 backdrop-blur-[0.6px]"></div>
       <div className="relative z-40 mt-24 pt-16 flex h-full w-full max-w-[1400px] flex-col pl-5 md:mt-10 lg:pl-20">
