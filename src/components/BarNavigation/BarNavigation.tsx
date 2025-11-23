@@ -14,12 +14,14 @@ type BarNavigationProps = {
   color: "white" | "black";
   bgWhite: boolean;
   visibleHeartIcon?: boolean;
+  visibleCartIcon?: boolean;
 };
 
 function BarNavigation({
   color = "white",
   bgWhite = false,
   visibleHeartIcon = true,
+  visibleCartIcon = true,
 }: BarNavigationProps) {
   const [openMenu, setOpenMenu] = useState(false);
 
@@ -95,52 +97,54 @@ function BarNavigation({
               <Logo color={color} />
             </span>
           </div>
-          <div className="flex items-center justify-center pr-2">
-            {/* FAVORITE ICON */}
-            {visibleHeartIcon ? (
-              <>
-                <TransparentBtnNavigation link="/favorite">
-                  <GoHeart
-                    title="Favorite"
-                    size={23}
-                    className="relative cursor-pointer drop-shadow-md"
-                    fill={`${color}`}
-                  />
-                </TransparentBtnNavigation>
-                {favoriteList.length > 0 ? (
-                  // dot icon that shows amount of items in favorite
-                  <span
-                    className={`absolute bottom-[13px] right-[60px] flex h-[18px] w-[18px] items-center justify-center rounded-full border-[2px] border-white bg-black text-xs font-semibold text-white ${animatePingOnce ? "animate-pingOnce" : ""}`}
-                  >
-                    {favoriteList.length}
-                  </span>
-                ) : (
-                  ""
-                )}
-              </>
-            ) : (
-              ""
-            )}
-            {/* CART ICON */}
-            <TransparentBtnNavigation link="/cart">
-              <LiaShoppingBagSolid
-                title="cart"
-                size={25}
-                className="relative cursor-pointer drop-shadow-md"
-                fill={`${color}`}
-              />
-            </TransparentBtnNavigation>
-            {cartQuantity > 0 ? (
-              // dot icon that shows amount of items added to cart
-              <span
-                className={`absolute bottom-3 right-[13px] flex h-[18px] w-[18px] items-center justify-center rounded-full border-[2px] 
-            border-white bg-black text-xs font-semibold text-white ${animatePingOnceCart ? "animate-pingOnceCart" : ""}`}
-              >
-                {cartQuantity}
-              </span>
-            ) : (
-              ""
-            )}
+          <div className="flex items-center pr-8">
+            {/* FAVORITE ICON WRAPPER */}
+            <div className="relative w-8">
+              {visibleHeartIcon && (
+                <>
+                  <TransparentBtnNavigation link="/favorite">
+                    <GoHeart
+                      title="Favorite"
+                      size={23}
+                      className="relative cursor-pointer drop-shadow-md"
+                      fill={`${color}`}
+                    />
+                  </TransparentBtnNavigation>
+                  {favoriteList.length > 0 && (
+                    // dot icon that shows amount of items in favorite
+                    <span
+                      className={`absolute bottom-[5px] right-0 flex h-[18px] w-[18px] items-center justify-center rounded-full border-[2px] border-white bg-black text-xs font-semibold text-white ${animatePingOnce ? "animate-pingOnce" : ""}`}
+                    >
+                      {favoriteList.length}
+                    </span>
+                  )}
+                </>
+              )}
+            </div>
+            {/* CART ICON WRAPPER */}
+            <div className="relative w-8">
+              {visibleCartIcon && (
+                <>
+                  <TransparentBtnNavigation link="/cart">
+                    <LiaShoppingBagSolid
+                      title="cart"
+                      size={25}
+                      className="relative cursor-pointer drop-shadow-md"
+                      fill={`${color}`}
+                    />
+                  </TransparentBtnNavigation>
+                  {cartQuantity > 0 && (
+                    // dot icon that shows amount of items added to cart
+                    <span
+                      className={`absolute bottom-[5px] right-0 flex h-[18px] w-[18px] items-center justify-center rounded-full border-[2px] 
+                      border-white bg-black text-xs font-semibold text-white ${animatePingOnceCart ? "animate-pingOnceCart" : ""}`}
+                    >
+                      {cartQuantity}
+                    </span>
+                  )}
+                </>
+              )}
+            </div>
           </div>
         </nav>
       </header>
