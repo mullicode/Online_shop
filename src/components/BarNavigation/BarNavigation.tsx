@@ -113,7 +113,7 @@ function BarNavigation({
                   {favoriteList.length > 0 && (
                     // dot icon that shows amount of items in favorite
                     <span
-                      className={`absolute bottom-[5px] right-0 flex h-[18px] w-[18px] items-center justify-center rounded-full border-[2px] border-white bg-black text-xs font-semibold text-white ${animatePingOnce ? "animate-pingOnce" : ""}`}
+                      className={`absolute right-0 top-[50%] -translate-y-50% flex h-[18px] w-[18px] items-center justify-center rounded-full border-[2px] border-white bg-black text-xs font-semibold text-white ${animatePingOnce ? "animate-pingOnce" : ""}`}
                     >
                       {favoriteList.length}
                     </span>
@@ -136,7 +136,7 @@ function BarNavigation({
                   {cartQuantity > 0 && (
                     // dot icon that shows amount of items added to cart
                     <span
-                      className={`absolute bottom-[5px] right-0 flex h-[18px] w-[18px] items-center justify-center rounded-full border-[2px] 
+                      className={`absolute right-0 top-[50%] -translate-y-50% flex h-[18px] w-[18px] items-center justify-center rounded-full border-[2px] 
                       border-white bg-black text-xs font-semibold text-white ${animatePingOnceCart ? "animate-pingOnceCart" : ""}`}
                     >
                       {cartQuantity}
