@@ -97,9 +97,9 @@ function BarNavigation({
               <Logo color={color} />
             </span>
           </div>
-          <div className="flex items-center pr-8">
+          <div className="flex items-center pr-8 gap-8">
             {/* FAVORITE ICON WRAPPER */}
-            <div className="relative w-8">
+            <div className="relative w-4">
               {visibleHeartIcon && (
                 <>
                   <TransparentBtnNavigation link="/favorite">
@@ -113,7 +113,7 @@ function BarNavigation({
                   {favoriteList.length > 0 && (
                     // dot icon that shows amount of items in favorite
                     <span
-                      className={`absolute right-0 top-[50%] -translate-y-50% flex h-[18px] w-[18px] items-center justify-center rounded-full border-[2px] border-white bg-black text-xs font-semibold text-white ${animatePingOnce ? "animate-pingOnce" : ""}`}
+                      className={`absolute left-full ml-1 top-[50%] -translate-y-50% flex h-[18px] w-[18px] items-center justify-center rounded-full border-[2px] border-white bg-black text-xs font-semibold text-white ${animatePingOnce ? "animate-pingOnce" : ""}`}
                     >
                       {favoriteList.length}
                     </span>
@@ -122,7 +122,7 @@ function BarNavigation({
               )}
             </div>
             {/* CART ICON WRAPPER */}
-            <div className="relative w-8">
+            <div className="relative w-4">
               {visibleCartIcon && (
                 <>
                   <TransparentBtnNavigation link="/cart">
@@ -136,7 +136,7 @@ function BarNavigation({
                   {cartQuantity > 0 && (
                     // dot icon that shows amount of items added to cart
                     <span
-                      className={`absolute right-0 top-[50%] -translate-y-50% flex h-[18px] w-[18px] items-center justify-center rounded-full border-[2px] 
+                      className={`absolute left-full ml-1 top-[50%] -translate-y-50% flex h-[18px] w-[18px] items-center justify-center rounded-full border-[2px] 
                       border-white bg-black text-xs font-semibold text-white ${animatePingOnceCart ? "animate-pingOnceCart" : ""}`}
                     >
                       {cartQuantity}
